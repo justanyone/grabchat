@@ -108,7 +108,7 @@ def _find_project_dir(cwd: Path = Path.cwd()) -> Path:
     Locate the Claude Code project directory for this repo.
 
     Claude encodes the working directory as a hyphen-joined path, e.g.
-    /home/alice/code/Quietkeep  →  -home-alice-code-Quietkeep
+    /home/alice/code/yourProject  →  -home-alice-code-yourProject
 
     We look for any subdirectory of ~/.claude/projects/ whose name ends with
     the repo's directory name (last component of cwd), preceded by a hyphen.
