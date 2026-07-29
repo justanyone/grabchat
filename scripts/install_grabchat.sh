@@ -45,6 +45,17 @@ copy_tree_if_missing() {
 
 mkdir -p "$TARGET_DIR/.claude"
 mkdir -p "$TARGET_DIR/.github"
+mkdir -p "$TARGET_DIR/.chat_history"
+
+if [[ ! -f "$TARGET_DIR/.chat_history/.gitignore" ]]; then
+  cat > "$TARGET_DIR/.chat_history/.gitignore" <<'EOF'
+*
+!.gitignore
+EOF
+  echo "Installed: $TARGET_DIR/.chat_history/.gitignore"
+else
+  echo "Preserving existing file: $TARGET_DIR/.chat_history/.gitignore"
+fi
 
 copy_if_missing "$ROOT_DIR/.claude/scripts/grabchat.py" "$TARGET_DIR/.claude/scripts/grabchat.py"
 copy_if_missing "$ROOT_DIR/.claude/scripts/grabchat.ini" "$TARGET_DIR/.claude/scripts/grabchat.ini"
