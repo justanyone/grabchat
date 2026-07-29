@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "grabchat"
+version = "0.1.0"
+description = "Export Claude Code session transcripts into Markdown files"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "Kevin" }]
+license = { text = "MIT" }
+keywords = ["claude", "chat", "transcript", "markdown"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/kevin/grabchat"
+Repository = "https://github.com/kevin/grabchat"
+
+[project.scripts]
+grabchat = "scripts.grabchat:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

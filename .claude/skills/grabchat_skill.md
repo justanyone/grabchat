@@ -52,11 +52,13 @@ Resolve the output path from `args`:
 | `--list` | pass `--list` to the script instead of `-o` |
 | `--list N` | pass `--list N` to the script |
 
-Run the script:
+Run the script from the repository root:
 
 ```bash
-uv run python scripts/grabchat.py [--list [N] | -o <resolved-path>]
+python3 scripts/grabchat.py [--list [N] | -o <resolved-path>]
 ```
+
+If the repo is installed as a utility inside another project, the same command works because the top-level wrapper in [scripts/grabchat.py](scripts/grabchat.py) forwards to the implementation in [.claude/scripts/grabchat.py](.claude/scripts/grabchat.py).
 
 By default the script also launches the exported file in a real browser
 itself (direct `google-chrome`/`chromium` binary launch, non-blocking,

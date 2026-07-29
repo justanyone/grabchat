@@ -3,11 +3,11 @@
 grabchat.py — Convert a Claude Code session transcript to readable Markdown.
 
 Usage:
-    python scripts/grabchat.py                     # export the latest session
-    python scripts/grabchat.py path/to/file.jsonl  # export a specific file
-    python scripts/grabchat.py -o out.md           # custom output path
-    python scripts/grabchat.py --list              # list 5 recent sessions, prompt to export
-    python scripts/grabchat.py --list 10           # list 10 recent sessions
+    python3 scripts/grabchat.py                     # export the latest session
+    python3 scripts/grabchat.py path/to/file.jsonl  # export a specific file
+    python3 scripts/grabchat.py -o out.md           # custom output path
+    python3 scripts/grabchat.py --list              # list 5 recent sessions, prompt to export
+    python3 scripts/grabchat.py --list 10           # list 10 recent sessions
 
 Output goes to .chat_history/ with a name derived from the session start time and
 the export time, so re-running never clobbers a previous export of the same session:
