@@ -4,7 +4,15 @@
 
 Grabchat exports a Claude Code session transcript into a readable Markdown file and saves it under a local .chat_history directory.
 
-It is designed to be useful both as a standalone utility and as a small repo that can be copied into another project. The goal is simple: take the transcript from a Claude Code session and turn it into an easy-to-read export you can inspect, share, or archive.
+It is designed to be useful as a slash command from within copilot or claude code.  This allows a simple command like:
+
+```bash
+/grabchat tuesday_test.md
+```
+
+and the entire chat history for that chat session will be copied into the file tuesday_test.md and that file place in a .chat_history/ subdirectory - either as a subdir of .claude or wherever else you want to put it (configurable in grabchat.ini file).
+
+Existing chat export consumes tokens.  Adding this as a slash command ("/grabchat") makes it almost free to execute.  Note this is most useful in VSCode and the source directory *might* differ when using pycharm or claude code directly, users will need to configure that if their setup differs.
 
 ## Typical workflow
 
