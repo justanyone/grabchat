@@ -1,7 +1,5 @@
 from pathlib import Path
 import subprocess
-import sys
-import textwrap
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]

@@ -85,15 +85,11 @@ if [[ -d "$TARGET_DIR/.claude" && -f "$TARGET_DIR/.claude/commands/grabchat.md" 
 fi
 
 if [[ -f "$TARGET_DIR/.claude/CLAUDE.md" ]]; then
-  if ! grep -q '/grabchat' "$TARGET_DIR/.claude/CLAUDE.md"; then
-    printf '\n# grabchat\nUse /grabchat to export the current Claude Code session transcript to Markdown.\n' >> "$TARGET_DIR/.claude/CLAUDE.md"
-  fi
+  echo "Preserving existing file: $TARGET_DIR/.claude/CLAUDE.md"
 fi
 
 if [[ -d "$TARGET_DIR/.github" && -f "$TARGET_DIR/.github/copilot-instructions.md" ]]; then
-  if ! grep -q 'grabchat' "$TARGET_DIR/.github/copilot-instructions.md"; then
-    printf '\n## grabchat\nUse the /grabchat slash command to export the current session transcript to Markdown.\n' >> "$TARGET_DIR/.github/copilot-instructions.md"
-  fi
+  echo "Preserving existing file: $TARGET_DIR/.github/copilot-instructions.md"
 fi
 
 echo "Install complete."

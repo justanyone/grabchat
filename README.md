@@ -143,6 +143,15 @@ Run the test suite with:
 pytest
 ```
 
+If you are running tests locally in this environment, it is easiest to use a virtual environment so you do not hit system Python package restrictions:
+
+```bash
+python3 -m venv .venv
+. .venv/bin/activate
+pip install pytest
+pytest -q
+```
+
 ## Notes
 
 - The script is intentionally simple and dependency-light so it is easy to copy into another project.
