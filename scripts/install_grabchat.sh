@@ -68,15 +68,14 @@ if [[ -d "$TARGET_DIR/.claude" ]]; then
 fi
 
 if [[ -d "$TARGET_DIR/.github" ]]; then
+  mkdir -p "$TARGET_DIR/.github/prompts" "$TARGET_DIR/.github/instructions"
+
   if [[ -f "$TARGET_DIR/.github/copilot-instructions.md" ]]; then
-    mkdir -p "$TARGET_DIR/.github/prompts"
-    copy_if_missing "$ROOT_DIR/.github/prompts/grabchat.prompt.md" "$TARGET_DIR/.github/prompts/grabchat.prompt.md"
-    copy_if_missing "$ROOT_DIR/.github/instructions/grabchat.instructions.md" "$TARGET_DIR/.github/instructions/grabchat.instructions.md"
-  else
-    mkdir -p "$TARGET_DIR/.github"
-    copy_if_missing "$ROOT_DIR/.github/prompts/grabchat.prompt.md" "$TARGET_DIR/.github/prompts/grabchat.prompt.md"
-    copy_if_missing "$ROOT_DIR/.github/instructions/grabchat.instructions.md" "$TARGET_DIR/.github/instructions/grabchat.instructions.md"
+    echo "Preserving existing file: $TARGET_DIR/.github/copilot-instructions.md"
   fi
+
+  copy_if_missing "$ROOT_DIR/.github/prompts/grabchat.prompt.md" "$TARGET_DIR/.github/prompts/grabchat.prompt.md"
+  copy_if_missing "$ROOT_DIR/.github/instructions/grabchat.instructions.md" "$TARGET_DIR/.github/instructions/grabchat.instructions.md"
 fi
 
 if [[ -d "$TARGET_DIR/.claude" && -f "$TARGET_DIR/.claude/commands/grabchat.md" ]]; then
