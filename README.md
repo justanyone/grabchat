@@ -157,3 +157,13 @@ pytest -q
 - The script is intentionally simple and dependency-light so it is easy to copy into another project.
 - The browser auto-open feature is best-effort and only works when a browser binary is available.
 - The installer intentionally avoids overwriting existing files so it works well with user-managed project setups.
+
+## Debugging Tests
+
+You may need to enable Ubuntu to unrestrict unpriviledged userns (user namespaces) to get tests to execute, in which case you'd need to:
+
+```bash
+echo "kernel.apparmor_restrict_unprivileged_userns=0" | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p
+```
+
